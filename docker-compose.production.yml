@@ -24,14 +24,12 @@ services:
   frontend:
     image: olegufo/kittygram_frontend
     env_file: .env
-    build: ./frontend/
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
 
   gateway:
     image: olegufo/kittygram_gateway
-    build: ./nginx/
     env_file: .env
     ports:
       - "9000:80"
