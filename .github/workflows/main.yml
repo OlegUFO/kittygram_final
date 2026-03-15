@@ -24,7 +24,6 @@ jobs:
 
       - name: Run tests
         run: |
-          cd backend
           pytest
 
   build_and_push:
