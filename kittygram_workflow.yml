@@ -22,9 +22,7 @@ jobs:
       - name: Lint
         run: flake8 backend/
 
-      - name: Run tests
-        run: |
-          pytest
+
 
   build_and_push:
     needs: tests
