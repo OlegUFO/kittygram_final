@@ -16,15 +16,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install flake8
+          pip install flake8 pytest pytest-django
           pip install -r backend/requirements.txt
 
       - name: Lint
         run: flake8 backend/
+      - name: Run tests
+        run: pytest
 
 
   build_and_push:
-
+    needs: tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
