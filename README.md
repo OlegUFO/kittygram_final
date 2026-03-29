@@ -1,26 +1,57 @@
 [![Kittygram workflow](https://github.com/OlegUFO/kittygram_final/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/OlegUFO/kittygram_final/actions/workflows/main.yml)
+        
+# TASKI AND KITTYGRAM
 
-## Что нужно сделать
+# Описание проекта 
+Проект представляет собой 2 приложения: Taski - приложение, предназначенное для создания заметок. Kittygram - приложение, где ты можешь выкладывать фото своих кошечек, а также прикладывать их достижения. 
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+## Стек использованных технологий
+1. Python 3.13
+2. Django 5.1.1
+3. Pytest
+4. Django REST Framework
+5. PyYAML
+6. PostgreSQL
 
-## Как проверить работу с помощью автотестов
-
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
+## Установка
+1. Клонировать репозиторий и перейти в него в командной строке:
+```
+git@github.com:OlegUFO/kittygram_final.git
+```
+``` 
+cd kittygram_backend 
 ```
 
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
+2. Cоздать и активировать виртуальное окружение:
+``` 
+python3 -m venv env 
+``` 
+ 
+* Если у вас Linux/macOS 
+    ``` 
+    source env/bin/activate 
+    ``` 
+* Если у вас windows 
+    ``` 
+    source env/scripts/activate 
+    ```
+``` 
+python3 -m pip install --upgrade pip 
+```
 
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
+3. Установить зависимости из файла requirements.txt:
+``` 
+pip install -r requirements.txt 
+```
 
-## Чек-лист для проверки перед отправкой задания
+4. Выполнить миграции:
+``` 
+python3 manage.py migrate 
+```
 
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+5. Запустить проект:
+``` 
+python3 manage.py runserver 
+```
+
+### Автор проекта - Oleg Rykov (OlegUFO)
